@@ -8,11 +8,19 @@ CREATE TABLE [dbo].[DIM_COUNTRY](
 	[System of National Accounts] [varchar](250) NULL,
 	[System of trade] [varchar](250) NULL
 ) ON [PRIMARY]
-GO
+
+CREATE TABLE [dbo].[DIM_METRICAS](
+	[ID_METRICA] [varchar](25) NOT NULL PRIMARY KEY,
+	[DESC_METRICA] [varchar](250) NULL,
+	[DESC_TOPIC] [varchar](250) NULL,
+	[DESC_AGREGACION] [varchar](250) NULL,
+	[DESC_SOURCE] [varchar](1250) NULL,
+	[DESC_LICENSE] [varchar](250) NULL
+) ON [PRIMARY]
 
 CREATE TABLE [dbo].[FACT_WWBI](
 	[ID_PAIS] [varchar](3) NULL,
+	[ID_METRICA] [varchar](25) NULL,
 	[ID_AÑO] INT NULL,
 	[IN_VALUE] FLOAT NULL
 ) ON [PRIMARY]
-GO
