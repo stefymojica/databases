@@ -430,7 +430,7 @@
     <created_date>2021/09/27 21:27:41.091</created_date>
     <modified_user>-</modified_user>
     <modified_date>2021/09/27 21:27:41.091</modified_date>
-    <key_for_session_key />
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -571,73 +571,10 @@
     </hop>
     <hop>
       <from>DIM_SERIES Mapping</from>
-      <to>DIM_SERIES</to>
+      <to>DIM_METRICAS</to>
       <enabled>Y</enabled>
     </hop>
   </order>
-  <step>
-    <name>STG_COUNTRY</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>STG_WWBI</connection>
-    <sql>SELECT
-  "Country Code"
-, "Short Name"
-, "Table Name"
-, "Long Name"
-, "2-alpha code"
-, "Currency Unit"
-, "Special Notes"
-, Region
-, "Income Group"
-, "WB-2 code"
-, "National accounts base year"
-, "National accounts reference year"
-, "SNA price valuation"
-, "Lending category"
-, "Other groups"
-, "System of National Accounts"
-, "Alternative conversion factor"
-, "PPP survey year"
-, "Balance of Payments Manual in use"
-, "External debt Reporting status"
-, "System of trade"
-, "Government Accounting concept"
-, "IMF data dissemination standard"
-, "Latest population census"
-, "Latest household survey"
-, "Source of most recent Income and expenditure data"
-, "Vital registration complete"
-, "Latest agricultural census"
-, "Latest industrial data"
-, "Latest trade data"
-FROM STG_COUNTRY
-</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>80</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>DIM_COUNTRY</name>
     <type>TableOutput</type>
@@ -741,60 +678,7 @@ FROM STG_COUNTRY
     </GUI>
   </step>
   <step>
-    <name>STG_SERIES</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>STG_WWBI</connection>
-    <sql>SELECT
-  "Series Code"
-, Topic
-, "Indicator Name"
-, "Short definition"
-, "Long definition"
-, "Unit of measure"
-, Periodicity
-, "Base Period"
-, "Other notes"
-, "Aggregation method"
-, "Limitations and exceptions"
-, "Notes from original source"
-, "General comments"
-, Source
-, "Statistical concept and methodology"
-, "Development relevance"
-, "Related source links"
-, "Other web links"
-, "Related indicators"
-, "License Type"
-FROM STG_SERIES
-</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>80</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>DIM_SERIES</name>
+    <name>DIM_METRICAS</name>
     <type>TableOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -883,6 +767,122 @@ FROM STG_SERIES
     </remotesteps>
     <GUI>
       <xloc>224</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>STG_COUNTRY</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>STG_WWBI</connection>
+    <sql>SELECT
+  "Country Code"
+, "Short Name"
+, "Table Name"
+, "Long Name"
+, "2-alpha code"
+, "Currency Unit"
+, "Special Notes"
+, Region
+, "Income Group"
+, "WB-2 code"
+, "National accounts base year"
+, "National accounts reference year"
+, "SNA price valuation"
+, "Lending category"
+, "Other groups"
+, "System of National Accounts"
+, "Alternative conversion factor"
+, "PPP survey year"
+, "Balance of Payments Manual in use"
+, "External debt Reporting status"
+, "System of trade"
+, "Government Accounting concept"
+, "IMF data dissemination standard"
+, "Latest population census"
+, "Latest household survey"
+, "Source of most recent Income and expenditure data"
+, "Vital registration complete"
+, "Latest agricultural census"
+, "Latest industrial data"
+, "Latest trade data"
+FROM STG_COUNTRY
+</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>80</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>STG_SERIES</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>STG_WWBI</connection>
+    <sql>SELECT
+  "Series Code"
+, Topic
+, "Indicator Name"
+, "Short definition"
+, "Long definition"
+, "Unit of measure"
+, Periodicity
+, "Base Period"
+, "Other notes"
+, "Aggregation method"
+, "Limitations and exceptions"
+, "Notes from original source"
+, "General comments"
+, Source
+, "Statistical concept and methodology"
+, "Development relevance"
+, "Related source links"
+, "Other web links"
+, "Related indicators"
+, "License Type"
+FROM STG_SERIES
+</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>80</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
