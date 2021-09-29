@@ -565,13 +565,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>STG_SERIES</from>
-      <to>DIM_SERIES Mapping</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>DIM_SERIES Mapping</from>
-      <to>DIM_METRICAS</to>
+      <from>STG_METRICA</from>
+      <to>DIM_METRICA</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -678,100 +673,6 @@
     </GUI>
   </step>
   <step>
-    <name>DIM_METRICAS</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>DWH_WWBI</connection>
-    <schema />
-    <table>DIM_METRICAS</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>DIM_SERIES Mapping</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>Series Code</name>
-        <rename>ID_METRICA</rename>
-      </field>
-      <field>
-        <name>Indicator Name</name>
-        <rename>DESC_METRICA</rename>
-      </field>
-      <field>
-        <name>Topic</name>
-        <rename>DESC_TOPIC</rename>
-      </field>
-      <field>
-        <name>Aggregation method</name>
-        <rename>DESC_AGREGACION</rename>
-      </field>
-      <field>
-        <name>Source</name>
-        <rename>DESC_SOURCE</rename>
-      </field>
-      <field>
-        <name>License Type</name>
-        <rename>DESC_LICENSE</rename>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>224</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>STG_COUNTRY</name>
     <type>TableInput</type>
     <description />
@@ -835,7 +736,7 @@ FROM STG_COUNTRY
     </GUI>
   </step>
   <step>
-    <name>STG_SERIES</name>
+    <name>STG_METRICA</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -846,29 +747,9 @@ FROM STG_COUNTRY
       <schema_name />
     </partitioning>
     <connection>STG_WWBI</connection>
-    <sql>SELECT
-  "Series Code"
-, Topic
-, "Indicator Name"
-, "Short definition"
-, "Long definition"
-, "Unit of measure"
-, Periodicity
-, "Base Period"
-, "Other notes"
-, "Aggregation method"
-, "Limitations and exceptions"
-, "Notes from original source"
-, "General comments"
-, Source
-, "Statistical concept and methodology"
-, "Development relevance"
-, "Related source links"
-, "Other web links"
-, "Related indicators"
-, "License Type"
-FROM STG_SERIES
-</sql>
+    <sql>SELECT distinct [Indicator Code] ID_METRICA,
+[Indicator Name] DESC_METRICA
+	FROM [STG_WWBI].dbo.[STG_DATA]</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -883,6 +764,49 @@ FROM STG_SERIES
     </remotesteps>
     <GUI>
       <xloc>80</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>DIM_METRICA</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>DWH_WWBI</connection>
+    <schema />
+    <table>DIM_METRICAS</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>

@@ -30,28 +30,6 @@ CREATE TABLE STG_COUNTRY(
 [Latest industrial data]  VARCHAR(250) NULL,
 [Latest trade data] VARCHAR(250) NULL)
 
-CREATE TABLE STG_SERIES(	
-[Series Code]	VARCHAR(250) NULL,
-[Topic]	VARCHAR(250) NULL,
-[Indicator Name]	VARCHAR(250) NULL,
-[Short definition]	VARCHAR(1250) NULL,
-[Long definition]	VARCHAR(5000) NULL,
-[Unit of measure]	VARCHAR(250) NULL,
-[Periodicity]	VARCHAR(250) NULL,
-[Base Period]	VARCHAR(250) NULL,
-[Other notes]	VARCHAR(250) NULL,
-[Aggregation method]	VARCHAR(250) NULL,
-[Limitations and exceptions]	VARCHAR(5050) NULL,
-[Notes from original source]	VARCHAR(5050) NULL,
-[General comments]	VARCHAR(1250) NULL,
-[Source]	VARCHAR(1250) NULL,
-[Statistical concept and methodology]	VARCHAR(5000) NULL,
-[Development relevance]	VARCHAR(5000) NULL,
-[Related source links]	VARCHAR(5050) NULL,
-[Other web links]	VARCHAR(5050) NULL,
-[Related indicators]	VARCHAR(5050) NULL,
-[License Type]	VARCHAR(250) NULL)
-
 CREATE TABLE STG_DATA(	
 	[Country Name]	VARCHAR(250) NULL,
 	[Country Code]	VARCHAR(250) NULL,

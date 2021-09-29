@@ -312,7 +312,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id />
-      <filename>C:\Users\IMF\Documents\learning_databases\7.indicadores_burocracia_mundial\STAGING_WWBI.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/STAGING_WWBI.ktr</filename>
       <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -348,7 +348,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id />
-      <filename>C:\Users\IMF\Documents\learning_databases\7.indicadores_burocracia_mundial\DIM_WWBI.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/DIM_WWBI.ktr</filename>
       <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -375,7 +375,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
+      <xloc>368</xloc>
       <yloc>240</yloc>
     </entry>
     <entry>
@@ -384,7 +384,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id />
-      <filename>C:\Users\IMF\Documents\learning_databases\7.indicadores_burocracia_mundial\FACT_WWBI.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/FACT_WWBI.ktr</filename>
       <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -411,8 +411,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>576</xloc>
-      <yloc>352</yloc>
+      <xloc>560</xloc>
+      <yloc>368</yloc>
     </entry>
   </entries>
   <hops>

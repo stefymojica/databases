@@ -430,7 +430,7 @@
     <created_date>2021/09/27 21:19:29.113</created_date>
     <modified_user>-</modified_user>
     <modified_date>2021/09/27 21:19:29.113</modified_date>
-    <key_for_session_key />
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -496,26 +496,6 @@
   </connection>
   <order>
     <hop>
-      <from>CSV_COUNTRY</from>
-      <to>STG_COUNTRY Mapping</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>STG_COUNTRY Mapping</from>
-      <to>STG_COUNTRY</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>CSV_SERIES</from>
-      <to>STG_SERIES Mapping</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>STG_SERIES Mapping</from>
-      <to>STG_SERIES</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>CSV_DATA</from>
       <to>STG_DATA Mapping</to>
       <enabled>Y</enabled>
@@ -523,6 +503,16 @@
     <hop>
       <from>STG_DATA Mapping</from>
       <to>STG_DATA</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CSV_COUNTRY</from>
+      <to>STG_COUNTRY Mapping</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>STG_COUNTRY Mapping</from>
+      <to>STG_COUNTRY</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -896,605 +886,6 @@
     </GUI>
   </step>
   <step>
-    <name>STG_COUNTRY</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>STG_WWBI</connection>
-    <schema />
-    <table>STG_COUNTRY</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>STG_COUNTRY Mapping</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>Short Name</name>
-        <rename>Short Name</rename>
-      </field>
-      <field>
-        <name>Table Name</name>
-        <rename>Table Name</rename>
-      </field>
-      <field>
-        <name>Long Name</name>
-        <rename>Long Name</rename>
-      </field>
-      <field>
-        <name>2-alpha code</name>
-        <rename>2-alpha code</rename>
-      </field>
-      <field>
-        <name>Currency Unit</name>
-        <rename>Currency Unit</rename>
-      </field>
-      <field>
-        <name>Special Notes</name>
-        <rename>Special Notes</rename>
-      </field>
-      <field>
-        <name>Region</name>
-        <rename>Region</rename>
-      </field>
-      <field>
-        <name>Income Group</name>
-        <rename>Income Group</rename>
-      </field>
-      <field>
-        <name>WB-2 code</name>
-        <rename>WB-2 code</rename>
-      </field>
-      <field>
-        <name>National accounts base year</name>
-        <rename>National accounts base year</rename>
-      </field>
-      <field>
-        <name>National accounts reference year</name>
-        <rename>National accounts reference year</rename>
-      </field>
-      <field>
-        <name>SNA price valuation</name>
-        <rename>SNA price valuation</rename>
-      </field>
-      <field>
-        <name>Lending category</name>
-        <rename>Lending category</rename>
-      </field>
-      <field>
-        <name>Other groups</name>
-        <rename>Other groups</rename>
-      </field>
-      <field>
-        <name>System of National Accounts</name>
-        <rename>System of National Accounts</rename>
-      </field>
-      <field>
-        <name>Alternative conversion factor</name>
-        <rename>Alternative conversion factor</rename>
-      </field>
-      <field>
-        <name>PPP survey year</name>
-        <rename>PPP survey year</rename>
-      </field>
-      <field>
-        <name>Balance of Payments Manual in use</name>
-        <rename>Balance of Payments Manual in use</rename>
-      </field>
-      <field>
-        <name>External debt Reporting status</name>
-        <rename>External debt Reporting status</rename>
-      </field>
-      <field>
-        <name>System of trade</name>
-        <rename>System of trade</rename>
-      </field>
-      <field>
-        <name>Government Accounting concept</name>
-        <rename>Government Accounting concept</rename>
-      </field>
-      <field>
-        <name>IMF data dissemination standard</name>
-        <rename>IMF data dissemination standard</rename>
-      </field>
-      <field>
-        <name>Latest population census</name>
-        <rename>Latest population census</rename>
-      </field>
-      <field>
-        <name>Latest household survey</name>
-        <rename>Latest household survey</rename>
-      </field>
-      <field>
-        <name>Source of most recent Income and expenditure data</name>
-        <rename>Source of most recent Income and expenditure data</rename>
-      </field>
-      <field>
-        <name>Vital registration complete</name>
-        <rename>Vital registration complete</rename>
-      </field>
-      <field>
-        <name>Latest agricultural census</name>
-        <rename>Latest agricultural census</rename>
-      </field>
-      <field>
-        <name>Latest industrial data</name>
-        <rename>Latest industrial data</rename>
-      </field>
-      <field>
-        <name>Latest trade data</name>
-        <rename>Latest trade data</rename>
-      </field>
-      <field>
-        <name>ï»¿"Country Code"</name>
-        <rename>Country Code</rename>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>224</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>CSV_SERIES</name>
-    <type>CsvInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <filename>C:\Users\IMF\Desktop\Recursos\ENTREGA FINAL\CP_FINAL\WWBI_csv\WDISeries.csv</filename>
-    <filename_field />
-    <rownum_field />
-    <include_filename>N</include_filename>
-    <separator>,</separator>
-    <enclosure>"</enclosure>
-    <header>Y</header>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <newline_possible>N</newline_possible>
-    <encoding />
-    <fields>
-      <field>
-        <name>ï»¿"Series Code"</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Topic</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Indicator Name</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Short definition</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Long definition</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Unit of measure</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Periodicity</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Base Period</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Other notes</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Aggregation method</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Limitations and exceptions</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Notes from original source</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>General comments</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Source</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Statistical concept and methodology</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Development relevance</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Related source links</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Other web links</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Related indicators</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>License Type</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>64</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>STG_SERIES</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>STG_WWBI</connection>
-    <schema />
-    <table>STG_SERIES</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>STG_SERIES Mapping</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>Topic</name>
-        <rename>Topic</rename>
-      </field>
-      <field>
-        <name>Indicator Name</name>
-        <rename>Indicator Name</rename>
-      </field>
-      <field>
-        <name>Short definition</name>
-        <rename>Short definition</rename>
-      </field>
-      <field>
-        <name>Long definition</name>
-        <rename>Long definition</rename>
-      </field>
-      <field>
-        <name>Unit of measure</name>
-        <rename>Unit of measure</rename>
-      </field>
-      <field>
-        <name>Periodicity</name>
-        <rename>Periodicity</rename>
-      </field>
-      <field>
-        <name>Base Period</name>
-        <rename>Base Period</rename>
-      </field>
-      <field>
-        <name>Other notes</name>
-        <rename>Other notes</rename>
-      </field>
-      <field>
-        <name>Aggregation method</name>
-        <rename>Aggregation method</rename>
-      </field>
-      <field>
-        <name>Limitations and exceptions</name>
-        <rename>Limitations and exceptions</rename>
-      </field>
-      <field>
-        <name>Notes from original source</name>
-        <rename>Notes from original source</rename>
-      </field>
-      <field>
-        <name>General comments</name>
-        <rename>General comments</rename>
-      </field>
-      <field>
-        <name>Statistical concept and methodology</name>
-        <rename>Statistical concept and methodology</rename>
-      </field>
-      <field>
-        <name>Development relevance</name>
-        <rename>Development relevance</rename>
-      </field>
-      <field>
-        <name>Related source links</name>
-        <rename>Related source links</rename>
-      </field>
-      <field>
-        <name>Other web links</name>
-        <rename>Other web links</rename>
-      </field>
-      <field>
-        <name>Related indicators</name>
-        <rename>Related indicators</rename>
-      </field>
-      <field>
-        <name>License Type</name>
-        <rename>License Type</rename>
-      </field>
-      <field>
-        <name>ï»¿"Series Code"</name>
-        <rename>Series Code</rename>
-      </field>
-      <field>
-        <name>Source</name>
-        <rename>Source</rename>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>224</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>CSV_DATA</name>
     <type>CsvInput</type>
     <description />
@@ -1760,7 +1151,197 @@
     </remotesteps>
     <GUI>
       <xloc>64</xloc>
-      <yloc>224</yloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>STG_COUNTRY</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>STG_WWBI</connection>
+    <schema />
+    <table>STG_COUNTRY</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>STG_COUNTRY Mapping</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>Short Name</name>
+        <rename>Short Name</rename>
+      </field>
+      <field>
+        <name>Table Name</name>
+        <rename>Table Name</rename>
+      </field>
+      <field>
+        <name>Long Name</name>
+        <rename>Long Name</rename>
+      </field>
+      <field>
+        <name>2-alpha code</name>
+        <rename>2-alpha code</rename>
+      </field>
+      <field>
+        <name>Currency Unit</name>
+        <rename>Currency Unit</rename>
+      </field>
+      <field>
+        <name>Special Notes</name>
+        <rename>Special Notes</rename>
+      </field>
+      <field>
+        <name>Region</name>
+        <rename>Region</rename>
+      </field>
+      <field>
+        <name>Income Group</name>
+        <rename>Income Group</rename>
+      </field>
+      <field>
+        <name>WB-2 code</name>
+        <rename>WB-2 code</rename>
+      </field>
+      <field>
+        <name>National accounts base year</name>
+        <rename>National accounts base year</rename>
+      </field>
+      <field>
+        <name>National accounts reference year</name>
+        <rename>National accounts reference year</rename>
+      </field>
+      <field>
+        <name>SNA price valuation</name>
+        <rename>SNA price valuation</rename>
+      </field>
+      <field>
+        <name>Lending category</name>
+        <rename>Lending category</rename>
+      </field>
+      <field>
+        <name>Other groups</name>
+        <rename>Other groups</rename>
+      </field>
+      <field>
+        <name>System of National Accounts</name>
+        <rename>System of National Accounts</rename>
+      </field>
+      <field>
+        <name>Alternative conversion factor</name>
+        <rename>Alternative conversion factor</rename>
+      </field>
+      <field>
+        <name>PPP survey year</name>
+        <rename>PPP survey year</rename>
+      </field>
+      <field>
+        <name>Balance of Payments Manual in use</name>
+        <rename>Balance of Payments Manual in use</rename>
+      </field>
+      <field>
+        <name>External debt Reporting status</name>
+        <rename>External debt Reporting status</rename>
+      </field>
+      <field>
+        <name>System of trade</name>
+        <rename>System of trade</rename>
+      </field>
+      <field>
+        <name>Government Accounting concept</name>
+        <rename>Government Accounting concept</rename>
+      </field>
+      <field>
+        <name>IMF data dissemination standard</name>
+        <rename>IMF data dissemination standard</rename>
+      </field>
+      <field>
+        <name>Latest population census</name>
+        <rename>Latest population census</rename>
+      </field>
+      <field>
+        <name>Latest household survey</name>
+        <rename>Latest household survey</rename>
+      </field>
+      <field>
+        <name>Source of most recent Income and expenditure data</name>
+        <rename>Source of most recent Income and expenditure data</rename>
+      </field>
+      <field>
+        <name>Vital registration complete</name>
+        <rename>Vital registration complete</rename>
+      </field>
+      <field>
+        <name>Latest agricultural census</name>
+        <rename>Latest agricultural census</rename>
+      </field>
+      <field>
+        <name>Latest industrial data</name>
+        <rename>Latest industrial data</rename>
+      </field>
+      <field>
+        <name>Latest trade data</name>
+        <rename>Latest trade data</rename>
+      </field>
+      <field>
+        <name>ï»¿"Country Code"</name>
+        <rename>Country Code</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1803,7 +1384,7 @@
     </remotesteps>
     <GUI>
       <xloc>368</xloc>
-      <yloc>224</yloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1821,87 +1402,63 @@
     <fields>
       <field>
         <name>Country Code</name>
-        <rename>Country Code</rename>
       </field>
       <field>
         <name>Indicator Name</name>
-        <rename>Indicator Name</rename>
       </field>
       <field>
         <name>Indicator Code</name>
-        <rename>Indicator Code</rename>
       </field>
       <field>
         <name>a2000</name>
-        <rename>a2000</rename>
       </field>
       <field>
         <name>a2001</name>
-        <rename>a2001</rename>
       </field>
       <field>
         <name>a2002</name>
-        <rename>a2002</rename>
       </field>
       <field>
         <name>a2003</name>
-        <rename>a2003</rename>
       </field>
       <field>
         <name>a2004</name>
-        <rename>a2004</rename>
       </field>
       <field>
         <name>a2005</name>
-        <rename>a2005</rename>
       </field>
       <field>
         <name>a2006</name>
-        <rename>a2006</rename>
       </field>
       <field>
         <name>a2007</name>
-        <rename>a2007</rename>
       </field>
       <field>
         <name>a2008</name>
-        <rename>a2008</rename>
       </field>
       <field>
         <name>a2009</name>
-        <rename>a2009</rename>
       </field>
       <field>
         <name>a2010</name>
-        <rename>a2010</rename>
       </field>
       <field>
         <name>a2011</name>
-        <rename>a2011</rename>
       </field>
       <field>
         <name>a2012</name>
-        <rename>a2012</rename>
       </field>
       <field>
         <name>a2013</name>
-        <rename>a2013</rename>
       </field>
       <field>
         <name>a2014</name>
-        <rename>a2014</rename>
       </field>
       <field>
         <name>a2015</name>
-        <rename>a2015</rename>
       </field>
       <field>
         <name>a2016</name>
-        <rename>a2016</rename>
-      </field>
-      <field>
-        <name>ï»¿"Country Name"</name>
-        <rename>Country Name</rename>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1913,8 +1470,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>224</xloc>
-      <yloc>224</yloc>
+      <xloc>208</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
